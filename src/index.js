@@ -6,16 +6,19 @@ import {RouterProvider} from "react-router-dom";
 import {BlogProvider} from "./providers/blog-provider";
 import {router} from "./routes";
 import {AuthProvider} from "./providers/auth-provider";
+import {ThemeProvider} from "./providers/theme-provider";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
   <React.StrictMode>
+      <ThemeProvider>
         <BlogProvider>
             <AuthProvider>
                 <RouterProvider router={router} />
             </AuthProvider>
         </BlogProvider>
+      </ThemeProvider>
   </React.StrictMode>
 );
 
