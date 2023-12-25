@@ -24,7 +24,7 @@ export function ArticleCard({selection, disabled}) {
 
     // The title and content of the cards may be weird when hidden
     return (
-        <div className="flex flex-col">
+        <div className="flex flex-col items-center">
             <Link style={{pointerEvents: disabled ? 'none' : '' }} to={`/posts/${selection.post_id}#`}>
                 <div className="hidden md:block">
                     <div className='bg-white dark:bg-neutral-700 pt-4 pb-4 pr-0 pl-0 rounded-2xl flex justify-between max-w-5xl'>
