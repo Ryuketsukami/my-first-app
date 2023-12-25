@@ -23,13 +23,15 @@ export function FilteredPosts() {
     return (
         <div className="bg-gray-100 pb-28 pt-28 dark:bg-black">
             <div className="lg:pr-28 lg:pl-28 md:pr-16 md:pl-16 pl-6 pr-6 flex flex-col justify-center space-y-10">
+                <div className="items-center flex flex-col">
                 <input
                     {...register('filter-input', {
 
                     })}
                     placeholder="Filter posts here!"
-                    className="outline outline-1 outline-gray-900 p-2 rounded-md md:mr-8 md:ml-8 lg:mr-36 lg:ml-36 dark:bg-neutral-400 dark:placeholder:text-neutral-600"
+                    className="max-w-5xl w-full outline outline-1 outline-gray-900 p-2 rounded-md md:mr-8 md:ml-8 lg:mr-36 lg:ml-36 dark:bg-neutral-400 dark:placeholder:text-neutral-600"
                 />
+                </div>
                 <div className="lg:pr-36 lg:pl-36 md:pl-8 md:pr-8 flex flex-col justify-center space-y-10 items-center">
                     {
                         filteredPosts.length ?
