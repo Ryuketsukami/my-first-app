@@ -24,10 +24,10 @@ export function ArticleCard({selection, disabled}) {
 
     // The title and content of the cards may be weird when hidden
     return (
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col max-w-5xl w-full">
             <Link style={{pointerEvents: disabled ? 'none' : '' }} to={`/posts/${selection.post_id}#`}>
                 <div className="hidden md:block">
-                    <div className='bg-white dark:bg-neutral-700 pt-4 pb-4 pr-0 pl-0 rounded-2xl flex justify-between max-w-5xl'>
+                    <div className='bg-white dark:bg-neutral-700 pt-4 pb-4 pr-0 pl-0 rounded-2xl flex justify-between'>
                         <div className="text-left flex-wrap pl-6 w-full sm:w-6/12">
                             <p className="pt-3 lg:text-xs text-gray-500 dark:text-gray-500 font-medium">{selection.date}</p>
                             <p className="lg:text-xl text-sm text-gray-800 dark:text-gray-200 font-bold pt-5 mr-0 pb-2 overflow-x-hidden text-ellipsis">{selection.title}</p>

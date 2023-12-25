@@ -16,7 +16,7 @@ export function ArticlesCluster(props) {
                     <p className="font-medium md:text-xs text-lg">View all</p>
                 </Link>
             </div>
-            <div className="flex flex-col space-y-4 pt-8 pb-12">
+            <div className="flex flex-col space-y-4 pt-8 pb-12 items-center">
                 {
                     section_list.map((element) => <ArticleCard key={uuid4()} selection={element} />)
                 }

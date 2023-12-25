@@ -30,7 +30,7 @@ export function FilteredPosts() {
                     placeholder="Filter posts here!"
                     className="outline outline-1 outline-gray-900 p-2 rounded-md md:mr-8 md:ml-8 lg:mr-36 lg:ml-36 dark:bg-neutral-400 dark:placeholder:text-neutral-600"
                 />
-                <div className="lg:pr-36 lg:pl-36 md:pl-8 md:pr-8 flex flex-col justify-center space-y-10">
+                <div className="lg:pr-36 lg:pl-36 md:pl-8 md:pr-8 flex flex-col justify-center space-y-10 items-center">
                     {
                         filteredPosts.length ?
                         filteredPosts.map( post => <ArticleCard key={uuid4()} selection={post} />)

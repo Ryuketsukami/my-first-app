@@ -30,7 +30,7 @@ export function CategoryPage() {
         <div>
             <PageTitle {...current_category} />
             <div className="bg-gray-100 dark:bg-black lg:pr-56 lg:pl-56 pt-16 md:pr-8 md:pl-8 pr-8 pl-8 pb-16">
-                <div className=" flex flex-col justify-center space-y-4 pb-16">
+                <div className=" flex flex-col justify-center space-y-4 pb-16 items-center">
                     {
                         posts
                             .filter(post => post.meta_type === category_meta_type)
