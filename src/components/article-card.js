@@ -34,7 +34,7 @@ export function ArticleCard({selection, disabled}) {
                             <p className="text-gray-500 dark:text-gray-400 mr-0 overflow-x-hidden text-ellipsis">{selection.preview_content}</p>
                         </div>
                         <div className="pr-4 pl-4">
-                            <img onError={addDefaultSrc} src={selection.thumbnail_src} alt='thumbnail' className="max-h-48 max-w-md" />
+                            <img onError={addDefaultSrc} src={selection.thumbnail_src} alt='thumbnail' className="max-h-48" />
                         </div>
                     </div>
                 </div>
