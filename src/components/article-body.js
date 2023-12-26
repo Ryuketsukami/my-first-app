@@ -12,8 +12,7 @@ import {useNavigate} from "react-router-dom";
 
 // This following body component takes care of rendering the whole content of an article plus the edit state when we are editing.
 // Currently, there is no feature to edit the main image and the title, we could do that, but we already did enough with the content editing, and it is the same concept.
-// Known issues:
-//      - when adding new component, unsaved changes get reset.
+// Known issue:
 //      - when cancelling while editing, the cancel will work, however, when you go to edit again, the input field will be filled with the cancelled text as initial input (currently this issue is plastered with navigate, it helps with it but doesn't fix the underlying problem)
 export function ArticleBody(props) {
     const { post } = props;
@@ -21,7 +20,8 @@ export function ArticleBody(props) {
 
     const { replacePostWithEdited } = useContext(BlogContext);
 
-    const { setEditing, setCancelled, editing, addContent, setContents, removeContentById, resetContents, currentContent } = useContext(EditorContext);
+    const { setEditing, setCancelled, editing,
+        setContents, removeContentById, resetContents, currentContent, addContentWithWatcher } = useContext(EditorContext);
 
     const { handleSubmit, watch, reset } = useContext(FormContext);
 
@@ -110,38 +110,41 @@ export function ArticleBody(props) {
     // The 3 following functions add the component to the list that is being mapped, in order to re-render.
     const addTitleComponent = (element) => {
         element.preventDefault();
-        setContents(watcherList);
-        watcherList = [];
-        addContent({
+        const newContent = {
             type:'title',
             data:'',
             id:uuid4()
-        });
+        }
+        addContentWithWatcher(watcherList, newContent);
+
+        watcherList = [];
         reset();
     };
 
     const addTextComponent = (element) => {
         element.preventDefault();
-        setContents(watcherList);
-        watcherList = [];
-        addContent({
+        const newContent = {
             type:'text',
             data:'',
             id:uuid4()
-        });
+        }
+        addContentWithWatcher(watcherList, newContent);
+
+        watcherList = [];
         reset();
     };
 
     const addUrlComponent = (element) => {
         element.preventDefault();
-        setContents(watcherList);
-        watcherList = [];
-        addContent({
+        const newContent = {
             type:'src',
             data:'https://i.imgur.com/yd01iL2.jpeg',
             alt:'default-alt',
             id:uuid4()
-        });
+        }
+        addContentWithWatcher(watcherList, newContent);
+
+        watcherList = [];
         reset();
     };
 
