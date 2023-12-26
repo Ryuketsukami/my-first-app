@@ -111,16 +111,22 @@ export function CreatePostComponent() {
         <div>
             {user ? (
                 <div className="bg-gradient-to-r from-title-red to-title-yellow
-                     dark:from-blue-600 dark:via-purple-400 dark:to-blue-600 lg:pr-96 lg:pl-96 pt-10 pb-10">
+                     dark:from-blue-600 dark:via-purple-400 dark:to-blue-600 lg:pr-64 lg:pl-64 md:pr-24 md:pl-24 pr-6 pl-6 pt-10 pb-10">
                     <form onSubmit={onSubmitData} className="flex flex-col justify-center space-y-10 items-center ">
                         <select onChange={onTypeChange} className="w-36 h-8 outline outline-2 outline-gray-900" id="type" name="type">
                             {
                                 categories.map(category => <option key={uuid4()} value={category.meta_type}>{category.title}</option>)
                             }
                         </select>
-                        <textarea required onChange={onTitleChange} className="p-3 bg-white h-28 w-96 outline outline-2 outline-gray-900" id="title" name="title" placeholder="title" maxLength="100" />
-                        <textarea required onChange={onContentChange} className="p-3 pt-2 h-64 w-96 outline outline-2 outline-gray-900 whitespace-normal" id="preview_content" name="preview_content" placeholder="post card text" maxLength="250" />
-                        <input required onChange={onUrlChange} className="p-3 outline outline-2 w-96 outline-gray-900" id="thumbnail_src" name="thumbnail_src" placeholder="thumbnail url" type="url" ref={srcInputRef} />
+                        <textarea required onChange={onTitleChange}
+                                  className="p-3 bg-white h-28 w-96 outline outline-2 outline-gray-900"
+                                  id="title" name="title" placeholder="title" maxLength="100" />
+                        <textarea required onChange={onContentChange}
+                                  className="p-3 pt-2 h-64 w-96 outline outline-2 outline-gray-900 whitespace-normal"
+                                  id="preview_content" name="preview_content" placeholder="post card text" maxLength="250" />
+                        <input required onChange={onUrlChange}
+                               className="p-3 outline outline-2 w-96 outline-gray-900" id="thumbnail_src"
+                               name="thumbnail_src" placeholder="thumbnail url" type="url" ref={srcInputRef} />
                         {previewCard}
                         <input className="w-20 h-12 bg-gray-900 text-white pt-2 pb-2 pr-3 pl-3 m-2 rounded-md cursor-pointer
                                             hover:text-gray-900 hover:bg-white hover:outline hover:outline-1 hover:outline-gray-900"

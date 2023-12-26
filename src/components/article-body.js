@@ -186,8 +186,8 @@ export function ArticleBody(props) {
             setCancelled(true);
             setEditing(false);
             resetContents();
+            navigate(`/posts#`)
             window.scrollTo(0,0);
-            navigate(`/#`)
         }
     }
 
