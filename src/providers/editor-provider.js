@@ -40,8 +40,12 @@ export function EditorProvider({children}) {
         setCurrentContent([...currentContent, {...component}]);
     }
 
+    // This function is not changing the content as I want it to.
+    // When we enter the function the content is as we desire, but,
+    // After we call setCurrentContent the currentContent does not change.
     const setContents = (content) => {
-        setCurrentContent([...content]);
+        const parsed_content = JSON.parse(JSON.stringify(content))
+        setCurrentContent([...parsed_content].map(c => ({...c})));
     }
 
     const editContentById = (component, target_id) => {

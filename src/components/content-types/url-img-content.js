@@ -9,8 +9,6 @@ export function UrlImgContent({ segment_alt, segment_src, type, id, componentDel
 
     const default_img_url = 'https://i.imgur.com/yd01iL2.jpeg';
 
-    console.log(inputWatcher);
-
     // Following function is to be called in case of Error in image component.
     // We want to return an "Empty" default picture in such case.
     const addDefaultSrc = (event) =>{

@@ -40,7 +40,6 @@ export function ArticleBody(props) {
     // This function is called when we map our content list to components.
     // Each array is translated to a component to be rendered.
     const ParseAndConvert = (current_obj) => {
-        // console.log(current_data_array);
         const type = current_obj.type;
         const data = current_obj.data;
         const id = current_obj.id;
