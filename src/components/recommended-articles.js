@@ -1,4 +1,5 @@
 import {ArticleCard} from "./article-card";
+import uuid4 from "uuid4";
 
 export function RecommendedArticles(props) {
     const {recommended_list} = props;
@@ -10,9 +11,11 @@ export function RecommendedArticles(props) {
                 </div>
             </div>
             <div className="flex flex-col space-y-4 pt-8 pb-16 items-center">
-                <ArticleCard selection={recommended_list[1]} />
-                <ArticleCard selection={recommended_list[2]} />
-                <ArticleCard selection={recommended_list[3]} />
+                {
+                    recommended_list
+                        .slice(0,Math.min(3,recommended_list.length))
+                        .map((element) => <ArticleCard key={uuid4()} selection={element} deleteDisabled={true} />)
+                }
             </div>
         </div>
     );

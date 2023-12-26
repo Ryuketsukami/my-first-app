@@ -3,7 +3,7 @@ import {useContext} from "react";
 import {AuthContext} from "../providers/auth-provider";
 import {BlogContext} from "../providers/blog-provider";
 
-export function ArticleCard({selection, disabled}) {
+export function ArticleCard({selection, disabled, deleteDisabled}) {
 
     const { user } = useContext(AuthContext);
     const { removePostById } = useContext(BlogContext);
@@ -52,7 +52,7 @@ export function ArticleCard({selection, disabled}) {
             </Link>
 
             {
-                (user?.role === 'admin' && !disabled) &&
+                (user?.role === 'admin' && !disabled && !deleteDisabled) &&
                 <button onClick={handleDelete} className='pl-1.5 pr-1.5 bg-red-700 rounded-lg items-center pb-2.5 pt-2 text-gray-200 outline outline-1 outline-gray-900'>
                     Delete Post
                 </button>
