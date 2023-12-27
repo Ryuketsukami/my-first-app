@@ -194,7 +194,7 @@ export function ArticleBody(props) {
 
 
     return (
-        <form onSubmit={handleSubmit(handlePostSubmit)}>
+        <form onSubmit={handleSubmit(handlePostSubmit)} className="h-full">
             <div className="bg-white pb-28 dark:bg-black dark:text-neutral-400">
                 <div className="lg:pr-36 lg:pl-36 md:pr-16 md:pl-16 pl-6 pr-6 flex flex-col justify-center space-y-10">
                     <img className="" src={post.full_image} alt="cool img" />

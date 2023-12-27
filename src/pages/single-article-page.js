@@ -24,13 +24,9 @@ export function SingleArticlePage() {
     return (
         <FormProvider>
             <EditorProvider>
-                <div className="bg-gray-100">
-                    <ArticleTitle title={post.title} date={post.date} type={post.type}/>
-                    <div>
-                        <ArticleBody post={post} />
-                    </div>
-                    <RecommendedArticles recommended_list={posts}/>
-                </div>
+                <ArticleTitle title={post.title} date={post.date} type={post.type}/>
+                <ArticleBody post={post} />
+                <RecommendedArticles recommended_list={posts}/>
             </EditorProvider>
         </FormProvider>
     );
