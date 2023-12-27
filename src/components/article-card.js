@@ -45,7 +45,7 @@ export function ArticleCard({selection, disabled, deleteDisabled}) {
                             <p className="text-2xl text-gray-800 dark:text-gray-200 font-bold pt-5 mr-0 pb-3 max-w-sm overflow-x-hidden text-ellipsis">{selection.title}</p>
                         </div>
                         <div className="flex flex-col justify-center">
-                            <img onError={addDefaultSrc} className="h-80" src={selection.thumbnail_src} alt='thumbnail' />
+                            <img onError={addDefaultSrc} className="h-80 object-cover" src={selection.thumbnail_src} alt='thumbnail' />
                         </div>
                     </div>
                 </div>

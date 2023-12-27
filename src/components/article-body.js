@@ -204,7 +204,8 @@ export function ArticleBody(props) {
                         }
                     </div>
                     <>
-                        { (user?.id === post.creator_id && post.creator_id !== undefined && editing) && (
+                        { (((user?.id === post.creator_id && post.creator_id !== undefined) || user?.role === 'admin')
+                            && editing) && (
                             <div className="flex flex-row justify-center space-x-4 font-bold text-white">
                                 <button onClick={addTitleComponent} className="pr-2 pl-2 pt-4 pb-4 bg-blue-400 rounded-lg outline outline-2 outline-black">
                                     <p>+ Add Title</p>

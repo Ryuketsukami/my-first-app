@@ -12,7 +12,7 @@ export function ArticleAdminMenu({current_creator_id, handleCancelClick, handleE
     return (
         <div className="bottom-0 sticky">
             {
-                (user?.id === creator_id && creator_id !== undefined) && (
+                ((user?.id === creator_id && creator_id !== undefined) || user?.role === 'admin') && (
                     <footer className="">
                         <div className="h-16 bg-white dark:bg-neutral-800 flex-row flex justify-end outline outline-1 outline-gray-900 mr-4 ml-4 rounded-t-lg mt-4 mb-4 pr-4 pl-4">
                             {editing ? (

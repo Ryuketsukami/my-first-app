@@ -29,7 +29,7 @@ export function UrlImgContent({ segment_alt, segment_src, type, id, componentDel
             {
                 editing ? (
                     <div className="flex flex-col justify-center">
-                        <div className="relative flex-col flex justify-center">
+                        <div className="object-contain flex justify-center items-center">
                             <img className="" src={validImage()} onError={addDefaultSrc} alt={segment_alt} />
                         </div>
                         <div className="flex flex-row justify-between">
@@ -53,7 +53,9 @@ export function UrlImgContent({ segment_alt, segment_src, type, id, componentDel
                         </div>
                     </div>
                 ) : (
-                    <img className="" onError={addDefaultSrc} src={segment_src} alt={segment_alt} />
+                    <div className="object-contain flex justify-center items-center">
+                        <img className="object-contain" onError={addDefaultSrc} src={segment_src} alt={segment_alt} />
+                    </div>
                 )
             }
         </Fragment>
